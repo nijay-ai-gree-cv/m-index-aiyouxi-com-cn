@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nijay-ai-gree-cv.github.io/m-index-aiyouxi-com-cn/sitemap.xml

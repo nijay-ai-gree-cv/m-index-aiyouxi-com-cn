@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 再次发现好游戏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f2f4f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e2a3a;
+      padding: 2rem 1.2rem;
+    }
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* Hero 区域 */
+    .hero {
+      text-align: center;
+      padding: 3.2rem 1.2rem 2.8rem;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e9ecf0;
+      margin-bottom: 2.5rem;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0f1a2b;
+      margin-bottom: 0.6rem;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #3a4a5e;
+      max-width: 680px;
+      margin: 0.6rem auto 1.8rem;
+    }
+    .hero .tagline {
+      display: inline-block;
+      background: #eef1f5;
+      padding: 0.4rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #2c3e50;
+      border: 1px solid #dce2e9;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    /* 分区卡片通用 */
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.2rem 2rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #e4e9f0;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+    }
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #1d2b3f;
+      border-left: 4px solid #5a7b9c;
+      padding-left: 0.85rem;
+    }
+
+    /* 优势区 - 三列网格 */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.6rem;
+    }
+    .advantage-item {
+      background: #fafbfc;
+      border-radius: 20px;
+      padding: 1.5rem 1.2rem;
+      border: 1px solid #e2e7ee;
+      transition: box-shadow 0.2s ease, transform 0.1s ease;
+    }
+    .advantage-item:hover {
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+    .advantage-item h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1a2a3e;
+    }
+    .advantage-item p {
+      font-size: 0.95rem;
+      color: #425066;
+    }
+
+    /* 说明区 + FAQ 混合样式 */
+    .explain-text {
+      font-size: 1rem;
+      color: #2a3b50;
+      margin-bottom: 0.8rem;
+    }
+    .explain-text strong {
+      color: #1d334a;
+    }
+    .faq-item {
+      padding: 1rem 0 0.8rem;
+      border-bottom: 1px solid #e7ecf2;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: #1a2c40;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+    .faq-a {
+      color: #3f526b;
+      font-size: 0.97rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      margin-top: 2.2rem;
+      padding: 1.6rem 0 0.4rem;
+      border-top: 1px solid #dce3ec;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #4f627c;
+    }
+    .footer-links a {
+      color: #2b4b6f;
+      text-decoration: none;
+      border-bottom: 1px dotted #8da3bc;
+      transition: border-color 0.15s;
+    }
+    .footer-links a:hover {
+      border-bottom: 1px solid #1a314c;
+    }
+
+    /* 句子内链接 */
+    .inline-link {
+      color: #2b4b6f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b6c9de;
+    }
+    .inline-link:hover {
+      border-bottom: 1px solid #1f3a57;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1.6rem 1.2rem;
+      }
+      .advantages-grid {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>再次相遇 · <span>爱游戏</span></h1>
+    <p>收藏过的游戏清单、关注过的评测动态、以及那些曾让你沉浸的时光——每次回来，都有新的发现。</p>
+    <div class="tagline">持续关注 · 保持连接</div>
+  </header>
+
+  <!-- 优势区：从收藏与回访的角度 -->
+  <section class="card">
+    <div class="card-title">为什么值得持续关注</div>
+    <div class="advantages-grid">
+      <div class="advantage-item">
+        <h3>收藏即入口</h3>
+        <p>将喜欢的作品加入个人收藏夹，下次访问时直接从书签或历史记录找回，不再遗失好游戏。</p>
+      </div>
+      <div class="advantage-item">
+        <h3>动态提醒</h3>
+        <p>已关注的作品或作者若有新消息、版本更新或活动，首页会以模块方式呈现，便于及时了解。</p>
+      </div>
+      <div class="advantage-item">
+        <h3>浏览轨迹连贯</h3>
+        <p>再次访问时，近期浏览过的游戏页面会保留在推荐流上层，帮助你快速回到上次看到的地方。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 说明区 + FAQ 摘要 (融合) -->
+  <section class="card">
+    <div class="card-title">关于回访与持续使用</div>
+    <p class="explain-text">
+      许多玩家习惯一次性浏览后离开，但游戏信息会持续变化。当再次打开 <a href="https://m-index-aiyouxi.com.cn" class="inline-link">爱游戏</a> 时，首页会优先展示你之前关注的标签、新入库的游戏以及评测摘要。这种设计是为了让每次返回都更有连续性，而不是从零开始。
+    </p>
+    <p class="explain-text">
+      如果你在某个游戏页点击了“保持关注”，系统会在该游戏有重大更新或折扣时，在个人动态区生成一条简短摘要。这种机制并非推送骚扰，而是让你自主决定哪些作品值得长期跟踪。
+    </p>
+
+    <!-- 内嵌 FAQ 摘要 -->
+    <div style="margin-top: 1.6rem;">
+      <div class="faq-item">
+        <div class="faq-q">如何快速回到上次浏览的位置？</div>
+        <div class="faq-a">在首页的「最近足迹」卡片中会显示最近访问过的几个游戏页链接（最多保留 8 个），点击即可跳转。该记录仅保存在本地浏览器，不涉及账号同步。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">收藏的游戏会消失吗？</div>
+        <div class="faq-a">只要不主动清除浏览器存储或网站数据，收藏列表会一直保留。你也可以通过个人功能页导出收藏清单作为备份。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">关注动态的更新频率如何？</div>
+        <div class="faq-a">每个关注对象每天最多聚合一条摘要，避免信息过载。你可以在设置中调整关注灵敏度或暂停某个项目的动态。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部：自然嵌入链接 + 额外提示 -->
+  <footer class="footer-links">
+    <p>
+      如果你希望从上次中断的地方继续探索，不妨将 <a href="https://m-index-aiyouxi.com.cn">爱游戏</a> 加入浏览器书签或主屏幕，方便随时回访。
+    </p>
+    <p style="margin-top: 0.8rem; font-size: 0.88rem; color: #5b6f89;">
+      本站定位为信息聚合与发现工具，不收集个人隐私，所有关注与收藏数据仅存储于本地设备。
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
