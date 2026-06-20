@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳门威尼斯人 · 资料索引页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #333;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      padding: 2rem 2rem 2.5rem;
+    }
+
+    /* 导航 */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #e6e6e6;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .nav-logo {
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #8b7340;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a4a4a;
+      font-size: 0.95rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #8b7340;
+      border-bottom-color: #8b7340;
+    }
+
+    /* hero 区域 */
+    .hero {
+      margin: 2.5rem 0 2rem;
+      padding: 1.8rem 2rem;
+      background: #f9f7f4;
+      border-radius: 24px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+      border: 1px solid #eae7e1;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #4b3e2c;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: #7c6f57;
+      border-left: 4px solid #c7b69a;
+      padding-left: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    /* 卡片通用 */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #3b3b3b;
+      margin: 2.2rem 0 1rem;
+      letter-spacing: 0.3px;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #e2ddd5;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .card {
+      background: #fcfcfc;
+      border: 1px solid #e5e0d8;
+      border-radius: 20px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s, transform 0.1s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #4a3f2f;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+
+    .card .meta {
+      font-size: 0.85rem;
+      color: #8a7d69;
+      margin-top: 0.8rem;
+      border-top: 1px dashed #ddd8cf;
+      padding-top: 0.7rem;
+    }
+
+    /* 说明/FAQ 区域 */
+    .faq-block {
+      background: #f8f6f2;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 0.8rem;
+      border: 1px solid #e5dfd5;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #4a3e2c;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-item p, .faq-item .desc {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .inline-link {
+      color: #7d6b4a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8aa93;
+      transition: border-color 0.15s;
+    }
+
+    .inline-link:hover {
+      border-bottom-style: solid;
+      border-color: #7d6b4a;
+    }
+
+    .footer-note {
+      margin-top: 2.8rem;
+      text-align: left;
+      font-size: 0.85rem;
+      color: #8b8070;
+      border-top: 1px solid #e2ddd5;
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-note a {
+      color: #7d6b4a;
+      text-decoration: none;
+      border-bottom: 1px dotted #ccc3b3;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      .page {
+        padding: 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .faq-block {
+        padding: 1.2rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+      <span class="nav-logo">◇ 资料整理</span>
+      <ul class="nav-links">
+        <li><a href="#intro">介绍</a></li>
+        <li><a href="#scenes">场景</a></li>
+        <li><a href="#faq">说明</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero 简明介绍 -->
+    <div class="hero" id="intro">
+      <h1>关于澳门威尼斯人 · 信息索引</h1>
+      <p>
+        澳门威尼斯人（The Venetian Macao）是澳门路氹城一座综合度假村，以意大利威尼斯水乡为主题。
+        本页从资料整理的角度汇集其设施、场景与常见疑问，方便快速查阅。
+      </p>
+      <p>
+        更多官方信息可参考 <a href="https://www-venetian.com" class="inline-link">澳门威尼斯人</a> 网站中的介绍与动态。
+      </p>
+      <div class="tagline">
+        ✦ 综合度假村 · 会议展览 · 购物中心 · 娱乐表演
+      </div>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <h2 class="section-title" id="scenes">常见场景模块</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🏨 住宿与会展</h3>
+        <p>提供超过3,000间套房，同时设有大型会展空间及宴会厅。经常举办行业展会、会议及企业活动。</p>
+        <p>配套设施包括多间餐厅、游泳池及健身中心，适合商务与休闲旅客。</p>
+        <div class="meta">参考类别：住宿 · 会议</div>
+      </div>
+      <div class="card">
+        <h3>🛍️ 购物与运河</h3>
+        <p>室内运河及贡多拉船是标志性体验，购物中心包含逾350间商铺，涵盖奢侈品、潮流品牌及本地特色商品。</p>
+        <p>运河两侧的街头表演与餐饮区营造出轻松漫步氛围。</p>
+        <div class="meta">参考类别：购物 · 观光</div>
+      </div>
+      <div class="card">
+        <h3>🎭 表演与娱乐</h3>
+        <p>威尼斯人剧场定期上演演唱会、音乐剧及喜剧秀；同时设有电影院及夜生活场所。</p>
+        <p>部分区域提供互动艺术装置及临时展览，适合不同年龄段的访客。</p>
+        <div class="meta">参考类别：演出 · 休闲</div>
+      </div>
+    </div>
+
+    <!-- 常见说明（FAQ摘要） -->
+    <div class="faq-block" id="faq">
+      <h2 style="font-weight:500; font-size:1.3rem; margin-bottom:1rem; color:#4a3e2c;">常见说明</h2>
+      <div class="faq-item">
+        <strong>如何前往澳门威尼斯人？</strong>
+        <p class="desc">度假村位于路氹金光大道，设有免费穿梭巴士往返关闸、机场、码头及主要酒店。也可以乘坐轻轨或出租车。</p>
+      </div>
+      <div class="faq-item">
+        <strong>是否适合家庭或带小孩？</strong>
+        <p class="desc">度假村内设儿童游乐区及家庭友好餐厅，部分表演项目对儿童开放。购物中心内也有适合各年龄层的店铺。</p>
+      </div>
+      <div class="faq-item">
+        <strong>非住客可以进入赌场区域吗？</strong>
+        <p class="desc">赌场区域仅限年满21岁人士进入，且需携带有效证件。非住客可自由使用商场、餐厅及公共娱乐空间，不受限。</p>
+      </div>
+      <div class="faq-item">
+        <strong>是否有行李寄存或失物招领？</strong>
+        <p class="desc">主要入口及酒店大堂设有礼宾部，提供短期行李寄存及失物招领服务，具体时段可向现场工作人员咨询。</p>
+      </div>
+      <p style="margin-top: 0.8rem; color: #6b6050; font-size: 0.9rem;">
+        ※ 以上信息整理自公开资料，实际情况可能随时间调整，建议出行前查阅 <a href="https://www-venetian.com" class="inline-link">澳门威尼斯人</a> 的最新公告。
+      </p>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+      <span>资料整理 · 内容索引页</span>
+      <span><a href="https://www-venetian.com">澳门威尼斯人</a> · 参考来源</span>
+    </div>
+  </div>
+</body>
+</html>
